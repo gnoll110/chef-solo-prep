@@ -5,28 +5,28 @@ sudo apt-get -y install build-essential zlib1g zlib1g-dev libssl-dev libreadline
 #
 # Install rbenv
 cd /usr/local
-git clone git://github.com/sstephenson/rbenv.git rbenv
-chgrp -R staff rbenv
-chmod -R g+rwxXs rbenv
+sudo git clone git://github.com/sstephenson/rbenv.git rbenv
+sudo chgrp -R staff rbenv
+sudo chmod -R g+rwxXs rbenv
 # make sure users that will use rbenv are in the group associated with the rbenv foller, ie 'staff' atm
 #
 # Mods for bash etcruby-build
 cp ~/.profile ~/.profile.bck
 sudo cp /etc/skel/.profile /etc/skel/.profile.bck
-sudo echo '# rbenv setup' | tee -a ~/.profile /etc/skel/.profile
-sudo echo 'export RBENV_ROOT=/usr/local/rbenv' | tee -a ~/.profile /etc/skel/.profile
-sudo echo 'export PATH="$RBENV_ROOT/bin:$PATH"' | tee -a ~/.profile /etc/skel/.profile
-sudo echo 'eval "$(rbenv init -)"' | tee -a ~/.profile /etc/skel/.profile
+sudo echo '# rbenv setup' | sudo tee -a ~/.profile /etc/skel/.profile
+sudo echo 'export RBENV_ROOT=/usr/local/rbenv' | sudo tee -a ~/.profile /etc/skel/.profile
+sudo echo 'export PATH="$RBENV_ROOT/bin:$PATH"' | sudo tee -a ~/.profile /etc/skel/.profile
+sudo echo 'eval "$(rbenv init -)"' | sudo tee -a ~/.profile /etc/skel/.profile
 #
 # Install 
 cd /usr/local/rbenv
-mkdir plugins
+sudo mkdir plugins
 cd plugins
-git clone git://github.com/sstephenson/ruby-build.git
-chgrp -R staff ruby-build
-chmod -R g+rwxs ruby-build
+sudo git clone git://github.com/sstephenson/ruby-build.git
+sudo chgrp -R staff ruby-build
+sudo chmod -R g+rwxs ruby-build
 #
-sudo echo 'export PATH="$RBENV_ROOT/plugins/ruby-build/bin:$PATH"' | tee -a ~/.profile /etc/skel/.profile
+sudo echo 'export PATH="$RBENV_ROOT/plugins/ruby-build/bin:$PATH"' | sudo tee -a ~/.profile /etc/skel/.profile
 #
 . ~/.profile
 #
