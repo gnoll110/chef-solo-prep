@@ -25,6 +25,8 @@ cd plugins
 sudo git clone git://github.com/sstephenson/ruby-build.git
 sudo chgrp -R staff ruby-build
 sudo chmod -R g+rwxs ruby-build
+cd ruby-build
+sudo ./install.sh
 #
 sudo echo 'export PATH="$RBENV_ROOT/plugins/ruby-build/bin:$PATH"' | sudo tee -a ~/.profile /etc/skel/.profile
 #
