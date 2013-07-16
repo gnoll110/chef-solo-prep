@@ -17,3 +17,8 @@ Run the following to check the installs worked.
 
     ruby -v
     chef-solo -v
+
+#TODO
+- Debug updaing of .profile file(s)
+
+This is still being debugged. I would use it yet, if I was you!
